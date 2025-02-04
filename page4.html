@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key-Value Array Types</title>
+    <script>
+        function displayTypes() {
+            let arr = [
+                {key: "one", value: 1},
+                {key: "apple", value: "iphone"},
+                {key: "two", value: 2},
+                {key: "nokia", value: "lumia"},
+                {key: "three", value: 3},
+                {key: "samsung", value: "galaxy"},
+                {key: "four", value: 4},
+                {key: "google", value: "pixel"},
+                {key: "amazon", value: "firephone"},
+                {key: "huawei", value: "honor"}
+            ];
+            let numCount = 0;
+            let strCount = 0;
+
+            arr.forEach(item => {
+                if (typeof item.value === 'number') {
+                    numCount++;
+                } else if (typeof item.value === 'string') {
+                    strCount++;
+                }
+            });
+
+            alert(`Number of values of type 'number': ${numCount}`);
+            alert(`Number of values of type 'string': ${strCount}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Key-Value Array Types</h1>
+    <button type="button" onClick="displayTypes()">Display Types</button>
+</body>
+</html>

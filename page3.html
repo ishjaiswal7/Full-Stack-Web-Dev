@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Operations</title>
+    <script>
+        function performOperation() {
+            let number = parseInt(document.getElementById("numberInput").value);
+            let operation = document.getElementById("operationSelect").value;
+            let numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+            let count = 0;
+
+            if (operation === "MAX") {
+                for (let i = 0; i < numbers.length; i++) {
+                    if (numbers[i] > number) {
+                        count++;
+                    }
+                }
+                alert(`Number of elements greater than ${number}: ${count}`);
+            } else if (operation === "MIN") {
+                for (let i = 0; i < numbers.length; i++) {
+                    if (numbers[i] < number) {
+                        count++;
+                    }
+                }
+                alert(`Number of elements less than ${number}: ${count}`);
+            } else if (operation === "FIND") {
+                let index = numbers.indexOf(number);
+                if (index !== -1) {
+                    alert(`Number ${number} found at position: ${index + 1}`);
+                } else {
+                    alert(`Number ${number} not found in the array.`);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Number Operations</h1>
+    <label>Number: <input type="number" id="numberInput"></label><br>
+    <label>Operation:
+        <select id="operationSelect">
+            <option value="MAX">MAX</option>
+            <option value="MIN">MIN</option>
+            <option value="FIND">FIND</option>
+        </select>
+    </label><br>
+    <button type="button" onClick="performOperation()">Perform Operation</button>
+</body>
+</html>
